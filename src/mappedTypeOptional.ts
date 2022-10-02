@@ -5,9 +5,7 @@ interface Options {
   label: string;
 }
 
-type OptionsUpdate = {
-  [k in keyof Options]?: Options[k];
-};
+type OptionsUpdate = Partial<Options>;
 
 class OptionUpdater {
   constructor(private options: Options) {}

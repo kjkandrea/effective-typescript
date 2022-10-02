@@ -52,3 +52,4 @@ console.log(calculateLength(v)); // 5
 
 z를 연산하지 않았기 때문에 결과는 오류이나,
 구조적 타이핑 관점에서는 x 와 y 가 있어서 Vector2D와 호환된다. 
+

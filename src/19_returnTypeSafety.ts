@@ -1,5 +1,7 @@
+import * as Process from 'process';
+
 const cache: {[ticker: string]: number} = {};
-function getQuote(ticker: string) {
+function getQuote(ticker: string): Promise<number> {
   if (ticker in cache) {
     return cache[ticker];
   }

@@ -150,4 +150,23 @@ const a2 = [1, 2, 3] as const;
 
 넒히기로 인해 오류가 발생한다고 생각되면, 명시적 타입 구문 또는 const 단언문을 추가하는것을 고려해야합니다.
 
-## 타입 좁히기 
+## 태그된 유니온
+
+여러개의 선택적 필드가 동시에 값이 있거나, 동시에 undefined 인 경우에 태그된 유니온 패턴이 잘 맞습니다.
+
+```typescript
+interface UploadEvent {
+  type: 'upload';
+  filename: string;
+  contents: string;
+}
+
+interface DownloadEvent {
+  type: 'download';
+  filename: string;
+}
+
+type AppEvent = UploadEvent | DownloadEvent;
+```
+
+`type` 속성은 태그 이며 런타임에 어떤 타입의 Event 가 사용되는지 판단하는 데 쓰입니다.

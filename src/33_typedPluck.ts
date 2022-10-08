@@ -1,7 +1,7 @@
 interface Album {
   artist: string;
   title: string;
-  releaseDate: string;
+  releaseDate: Date;
   recordingType: RecordingType;
 }
 
@@ -21,7 +21,7 @@ const albums: Album[] = [
   {
     artist: '',
     title: '',
-    releaseDate: 'YYYY-MM-DD',
+    releaseDate: new Date(),
     recordingType: 'studio',
   },
 ];
